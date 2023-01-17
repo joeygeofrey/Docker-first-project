@@ -14,6 +14,14 @@ test:
 	python -m pytest --nbval notebook.ipynb
 
 
+validate-circleci:
+	circleci config process .circleci/config.yml
+
+
+run-circleci-local:
+	circleci local execute
+
+
 lint:
 	pylint --disable=R,C,W1203 app.py
 
